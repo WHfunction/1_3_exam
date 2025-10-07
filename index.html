@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第3回学力テスト 範囲表</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3D405B;
+            --secondary-color: #81B29A;
+            --background-color: #F4F1DE;
+            --card-bg-color: #FFFFFF;
+            --text-color: #333333;
+            --header-text-color: #FFFFFF;
+            --border-color: #E0E0E0;
+            --shadow-color: rgba(0, 0, 0, 0.08);
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .main-title {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .subject-card {
+            background-color: var(--card-bg-color);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px var(--shadow-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-header {
+            background-color: var(--primary-color);
+            color: var(--header-text-color);
+            padding: 1rem 1.5rem;
+        }
+
+        .card-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .card-section {
+            margin-bottom: 1.5rem;
+        }
+        .card-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .card-section h3 {
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .card-section p {
+            margin: 0;
+            line-height: 1.8;
+            font-size: 0.95rem;
+            white-space: pre-line; /* 改行を反映させる */
+        }
+        
+        /* === ここから時間割のスタイルを追加 === */
+        .timetable-container {
+            background-color: var(--card-bg-color);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px var(--shadow-color);
+            padding: 1.5rem;
+            margin-top: 3rem; /* 上の要素との余白 */
+            margin-bottom: 2rem; /* 下の要素との余白 */
+            overflow-x: auto; /* スマホ表示で表がはみ出た場合にスクロール */
+        }
+        .timetable-title {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+        .timetable {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        .timetable th, .timetable td {
+            border: 1px solid var(--border-color);
+            padding: 0.8rem;
+            font-size: 0.95rem;
+            min-width: 100px; /* セルの最小幅を指定 */
+        }
+        .timetable th {
+            background-color: var(--primary-color);
+            color: var(--header-text-color);
+            font-weight: 500;
+        }
+        .timetable tbody tr:nth-child(odd) td {
+            background-color: #f9f9f9;
+        }
+        /* === ここまで時間割のスタイル === */
+
+        @media (max-width: 400px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+            body {
+                padding: 1rem;
+            }
+            .main-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="main-title">第3回学力テスト 範囲表</h1>
+
+        <div class="grid-container">
+            
+            <div class="subject-card">
+                <div class="card-header"><h2><span>📚</span>現代国語</h2></div>
+                <div class="card-body">
+                    <div class="card-section">
+                        <h3>範囲</h3>
+                        <p>&lt;私&gt;時代のデモクラシー・近代重ね読み文章A・D
+                            夢十夜(第一夜)
+                            リアルマスター P74-125
+                            授業内容</p>
+                    </div>
+                    <div class="card-section">
+                        <h3>補足</h3>
+                        <p>前近代・近代の説明も
+                            夢十夜は問題数少なめ
+                            </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subject-card">
+                <div class="card-header"><h2><span>📜</span>古文</h2></div>
+                <div class="card-body">
+                    <div class="card-section">
+                        <h3>範囲</h3>
+                        <p>伊勢物語、芥川
+                            プログラス13-18
+                            文法(うさぎ) 12-17</p>
+                    </div>
+                    <div class="card-section">
+                        <h3>補足</h3>
+                        <p>伊勢物語・芥川は文学史を含む
+                            プログレスは2題出題</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subject-card">
+                <div class="card-header"><h2><span>🖋️</span>漢文</h2></div>
+                <div class="card-body">
+                    <div class="card-section">
+                        <h3>範囲</h3>
+                        <p>教科書 P未定
+                            新明説漢文ノート P未定</p>
+                    </div>
+                    <div class="card-section">
+                        <h3>提出物・備考</h3>
+                        <p>未定</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subject-card">
+                <div class="card-header"><h2><span>➗</span>数学Ⅰ</h2></div>
+                <div class="card-body">
+                    <div class="card-section">
+                        <h3>範囲</h3>
+                        <p>教科書 P95~126
+                            Solution3 P29~最後まで</p>
+                    </div>
+                  <div class="card-section">
+                        <h3>提出物</h3>
+                        <p>クリアー完成ノート2次関数 P66~96</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subject-card">
+                <div class="card-header"><h2><span>📐</span>数学A</h2></div>
+                <div class="card-body">
+                    <div class="card-section">
+                        <h3>範囲</h3>
+                        <p>教科書P43~72
+                            Solution2 P40~最後まで</p>
+                    </div>
+                  <div class="card-section">
+                        <h3>提出物</h3>
+                        <p>クリアー完成ノート図形の性質 P2~18</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subject-card">
+                <div class="card-header"><h2><span>🧮</span>数学演習</h2></div>
+                <div class="card-body">
+                    <div class="card-section">
+                        <h3>範囲</h3>
+                        <p>Solution4 P59~最後まで
+                            数1教科書P168~200
+                            数A教科書P74~89
+                            Solution5 P1~18</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subject-card">
+                <div class="card-header"><h2><span>🌍</span>地理</h2></div>
+                <div class="card-body">
+                    <div class="card-section">
+                        <h3>範囲</h3>
+                        <p>教科書: P64~77, P82~95, P102-103, P116-119
+                            地理ノート: P31~38, 43~46, 48~50, 55, 65-66, 78, 39, 42, 47</p>
+                    </div>
+                    <div class="card-section">
+                        <h3>自然環境対象地域</h3>
+                        <p>ヨーロッパ、オーストラリア、ニュージーランド、東南アジア、西アジア、中央アジア、北アフリカ</p>
+                    </div>
+                    <div class="card-section">
+                        <h3>提出物</h3>
+                        <p>予想問題 (クラスルーム)
+                            ノート提出あり</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subject-card">
+                <div class="card-header"><h2><span>🏛️</span>歴史</h2></div>
+                <div class="card-body">
+                    <div class="card-section">
+                        <h3>範囲</h3>
+                        <p>教科書 P54~未定
+                            ノート P26~未定
+                            ゼミナール P未定</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subject-card">
+                <div class="card-header"><h2><span>🧬</span>生物</h2></div>
+                <div class="card-body">
+                    <div class="card-section">
+                        <h3>範囲</h3>
+                        <p>教科書 P42~61</p>
+                    </div>
+                    <div class="card-section">
+                        <h3>問題集</h3>
+                        <p>リードa: P16の4, 5(1)
+                            P19の例題5, 11・12番
+                            18番の(6), 27番の(4)(5)
+                            13~17番, 18番の(7)
+                            P15の【4】, P16の5の(2)
+                            P19の例題6, 21, 25・26番</p>
+                    </div>
+                     <div class="card-section">
+                        <h3>提出物</h3>
+                        <p>未定</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subject-card">
+                <div class="card-header"><h2><span>🧪</span>化学</h2></div>
+                <div class="card-body">
+                    <div class="card-section">
+                        <h3>範囲</h3>
+                        <p>教科書 P未定
+                            Let's Try Note P未定</p>
+                    </div>
+                  <div class="card-section">
+                        <h3>提出物</h3>
+                        <p>学力テスト対策 練習問題
+                            Instagramでプリント無料配布中。若狭へDMで。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subject-card">
+                <div class="card-header"><h2><span>ന്യ</span>物理</h2></div>
+                <div class="card-body">
+                    <div class="card-section">
+                        <h3>範囲</h3>
+                        <p>教科書 P30~49
+                            問題集 P10~21</p>
+                    </div>
+                    <div class="card-section">
+                        <h3>補足</h3>
+                        <p>水平投射・斜方投射は除く</p>
+                    </div>
+                    <div class="card-section">
+                        <h3>提出物</h3>
+                        <p>授業ノート提出</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subject-card">
+                <div class="card-header"><h2><span>💬</span>英語コミュニケーション</h2></div>
+                <div class="card-body">
+                    <div class="card-section">
+                        <h3>範囲</h3>
+                        <p>Chapter5 P68~77 予習プリント無料配布中
+                            Chapter6 P84~91
+                            初見の文章(発展のみ)
+                            コーパス4500 p214~223
+                            (単語テストと同様形式)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subject-card">
+                <div class="card-header"><h2><span>🗣️</span>論理・表現</h2></div>
+                <div class="card-body">
+                    <div class="card-section">
+                        <h3>範囲</h3>
+                      <p>教科書Lesson7・8 (P63~78)
+                            上記該当文法SKYWARD(発展のみ)
+                            コーパス4500 224~233
+                            (単語テストと同様形式)</p>
+                    </div>
+                </div>
+            </div>
+
+             <div class="subject-card">
+                <div class="card-header"><h2><span>🚫</span>テストなし</h2></div>
+                <div class="card-body">
+                    <div class="card-section">
+                        <h3>以下の科目はテストなしです</h3>
+                        <p>公民
+                            家庭科
+                            保健</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="timetable-container">
+            <h2 class="timetable-title">時間割</h2>
+            <table class="timetable">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>火</th>
+                        <th>水</th>
+                        <th>木</th>
+                        <th>金</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>１限</td>
+                        <td>古文</td>
+                        <td>地理</td>
+                        <td>漢文</td>
+                        <td>歴史</td>
+                    </tr>
+                    <tr>
+                        <td>２限</td>
+                        <td>論表</td>
+                        <td>数A</td>
+                        <td>英コミュ</td>
+                        <td>現国</td>
+                    </tr>
+                    <tr>
+                        <td>３限</td>
+                        <td>数1</td>
+                        <td>化学基礎(30分)</td>
+                        <td>物理基礎(30分)</td>
+                        <td>数学演習</td>
+                    </tr>
+                    <tr>
+                        <td>４限</td>
+                        <td></td>
+                        <td></td>
+                        <td>生物基礎(30分)</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+<p>各自、常に最新の情報をご確認ください</p>
+<p>このページに誤りがあった場合においても、一切の責任を負いかねます。あらかじめご了承ください</p>
+<p>2025_若狭裕人</p>
+</body>
+</html>
